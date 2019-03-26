@@ -8,5 +8,7 @@
 * Undo strokes
 * Clear canvas
 
+![fingerpaint-preview-screens](https://github.com/pear-was/android-fingerpaint/blob/master/android-fingerpaint.png "Fingerpaint Preview Image")
+
 ## Reference:
 #### ColorPicker: https://android.googlesource.com/platform/development/+/master/samples/ApiDemos/src/com/example/android/apis/graphics/ColorPickerDialog.java
