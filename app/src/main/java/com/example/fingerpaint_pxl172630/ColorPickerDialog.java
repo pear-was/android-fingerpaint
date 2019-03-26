@@ -1,3 +1,17 @@
+/******************************************************************************
+ * This is an application written for 4301.002, which allows the user to draw
+ * on a touchscreen using their finger, otherwise known as "fingerpaint". The
+ * user can change the color of the line using a color picker, and the thickness
+ * of the line using a slider. Also, the user can clear the canvas or undo the
+ * drawing line by line.
+ *
+ * This is a modified version of the ColorPickerDialog.java, which is
+ * available as an Android API Demo
+ *
+ * Written by Perry Lee (pxl172630) at The University of Texas at Dallas
+ * starting March 24, 2019, for an Android development course.
+ ******************************************************************************/
+
 package com.example.fingerpaint_pxl172630;
 
 import android.app.Dialog;
@@ -29,6 +43,7 @@ public class ColorPickerDialog extends Dialog {
         private final int[] mColors;
         private OnColorChangedListener mListener;
 
+        // Constructor which creates a gradient circle
         ColorPickerView(Context c, OnColorChangedListener l, int color) {
             super(c);
             mListener = l;
@@ -51,6 +66,7 @@ public class ColorPickerDialog extends Dialog {
         private boolean mTrackingCenter;
         private boolean mHighlightCenter;
 
+        // Override onDraw to handle user selection within the color circle
         @Override
         protected void onDraw(Canvas canvas) {
             float r = CENTER_X - mPaint.getStrokeWidth()*0.5f;
@@ -83,6 +99,8 @@ public class ColorPickerDialog extends Dialog {
             setMeasuredDimension(CENTER_X*2, CENTER_Y*2);
         }
 
+        // This defines the size of the color picker wheel and center dropper,
+        // which has been modified to be easier to interact with
         private static final int CENTER_X = 300;
         private static final int CENTER_Y = 300;
         private static final int CENTER_RADIUS = 64;
@@ -154,6 +172,7 @@ public class ColorPickerDialog extends Dialog {
 
         private static final float PI = 3.1415926f;
 
+        // Override onTouchEvent to claim color touched
         @Override
         public boolean onTouchEvent(MotionEvent event) {
             float x = event.getX() - CENTER_X;

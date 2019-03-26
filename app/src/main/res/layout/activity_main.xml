@@ -25,7 +25,7 @@
         android:id="@+id/clearButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:onClick="clearButton"
         android:text="@string/clear"
@@ -35,13 +35,24 @@
     <Button
         android:id="@+id/color"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:onClick='colorButton'
         android:text="@string/color"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/clearButton" />
+
+    <Button
+        android:id="@+id/undoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="undoButton"
+        android:text="@string/undo"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toStartOf="@+id/color" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
@@ -50,40 +61,27 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="64dp" />
 
-    <Button
-        android:id="@+id/undoButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="8dp"
-        android:onClick="undoButton"
-        android:text="@string/undo"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toStartOf="@+id/color" />
-
     <SeekBar
         android:id="@+id/seekBar"
-        android:layout_width="284dp"
+        android:layout_width="0dp"
         android:layout_height="22dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/brush_size"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/drawCanvas"
-        app:layout_constraintEnd_toStartOf="@+id/seekBar"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:layout_constraintVertical_bias="1.0" />
