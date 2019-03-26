@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Fingerpaint_pxl172630</string>
+    <string name="clear">Clear</string>
+    <string name="color">Color</string>
+    <string name="undo">Undo</string>
+    <string name="brush_size">Brush Size</string>
+</resources>
